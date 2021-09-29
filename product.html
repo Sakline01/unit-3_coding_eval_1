@@ -30,7 +30,7 @@
         <input type="number" name="price" placeholder="enter the price" id="price">
         <input type="number" name="currency" placeholder="enter the currency" id="currency">
         <input type="number" name="qty" placeholder="enter the quantity" id="qty">
-        <button>ADD PRODUCT</button>
+        <button onclick="getProduct()">ADD PRODUCT</button>
     </div>
     <script>
         function productConstrutor(id,pname,price,currency,qty) {
@@ -40,7 +40,18 @@
             this.currency= currency;
             this.available_qty=qty;
         }
-
+        var arr=[];
+        function getProduct() {
+            var id=document.getElementById("id").value;
+            var pname=document.getElementById("name").value;
+            var price=document.getElementById("price").value;
+            var currency=document.getElementById("currency").value;
+            var qty=document.getElementById("qty").value;
+            var addProduct=new productConstrutor(id,pname,price,currency,qty);
+            arr.push(addProduct);
+            console.log(arr)
+        }
+        
     </script>
 </body>
 </html>
